@@ -8,7 +8,7 @@ const app = express();
 
 dotenv.config();
 
-app.use(cors());
+app.use(cors()); 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -25,6 +25,8 @@ mongoose.connect(process.env.url)
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
+
+
 
 // API Route to get all blogs
 app.get('/api/blog/all', async (req, res) => {
